@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Tasks</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+<body>
+
+    <div id="container">
+        <div id="header">
+            <div id="head1">
+                <section>
+                    <img src="under1.png" alt="">
+                </section>
+            </div>
+
+            <div id="head2">
+                <img src="banner1.jpg">
+            </div>
+
+            <div id="head3">
+                <section>
+                    <img src="under1.png" alt="">
+                </section>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="left">
+                <p> Hi, welcome to my first web app called "Simply To-Do"</p>
+                <br>
+                <p>I built this app using Vue.js and it was very interesting experience. Here you can add your To-Do tasks using the text box provided and just click "add" and that's it, you have created your very first task. Go ahead and create some more,
+                    then go and complete your tasks, don't forget to come back and mark your task as complete. </p>
+                <br>
+                <p> Happy To-Do!</p>
+            </div>
+            <div id="right">
+                <div id="wrapper">
+
+                    <div id="tasks">
+                        <br>
+                        <div>My To-Do list</div>
+                        <br>
+                        <br>
+                        <div id="div" v-for=" todo in todos">
+
+                            <input class="item" type="checkbox" v-on:change=toogle(todo) v-bind:checked="todo.checked" />
+
+                            <del class="grey" v-if="todo.checked">{{todo.text}}</del>
+
+                            <span v-else>{{todo.text}}</span>
+                        </div>
+                    </div>
+
+                    <div id="functions">
+                        <input type="text" id="item2" placeholder="New task">
+                        <button class="btn first" id="booton" onclick="add()">Add</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="footer" style="text-align: center;">
+            This is footer (UNDER CONSTRUCTION)
+            <img src="under.png" alt="">
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@next "></script>
+    <script src="app.js "></script>
+
+
+</body>
+
+</html>
