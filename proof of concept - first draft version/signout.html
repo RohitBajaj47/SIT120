@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+     <!-- title set  -->
+    <title>Clear Goals | Be productive</title>
+
+     <!-- dashboard style sheet linked -->
+    <link rel="stylesheet" href="signout.css" />
+
+    <!-- universal design style sheet linked -->
+    <link rel="stylesheet" href="design.css" />
+
+    <!-- google font : Poopins loaded here  -->
+    <script
+      src="https://kit.fontawesome.com/4a404ff615.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- internal styles  -->
+    <style>
+      * {
+        text-decoration: none;
+        font-family: monospace;
+      }
+
+      /* sample division styles */
+      #sample {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      /* input box styles */
+      input {
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+      }
+
+      #credentials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #username::placeholder,
+      #password::placeholder {
+        font-style: italic;
+        font-size: 14px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <!-- sample sign in page  -->
+    <div id="sample" class="glass">
+      <h1>Sign in | Clear Goals</h1>
+      <div id="credentials">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          placeholder=".. No credentials required"
+        />
+        <br />
+        <label for="password"> Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder=".. just click login"
+        />
+      </div>
+      <button id="login" onclick="check()" class="glass">
+        <a href="dashboard.html">Login</a>
+      </button>
+    </div>
+
+    <!-- internal scripts (just a sample!) -->
+    <script>
+      function check() {
+        var id = "rohit";
+        var pwsd = "bajaj";
+        if (
+          id == document.getElementById("username").value &&
+          pwsd == document.getElementById("password").value
+        ) {
+          document.getElementById("login").innerHTML = "wao";
+        }
+      }
+    </script>
+  </body>
+</html>

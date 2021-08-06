@@ -1,0 +1,455 @@
+
+/* navigation bar , positioned with abosulte percentages*/
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 12.077%;
+  height: 85.481%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 8.48%;
+  left: 3.86%;
+  border-radius: 13px;
+}
+
+/* user-profile division in navigartion bar  */
+nav div:nth-child(1) {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 1px solid; */
+}
+
+/* menu links division in navigartion bar  */
+nav div:nth-child(2) {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* border: 1px solid; */
+}
+
+/* sign out division in navigation bar  */
+nav div:nth-child(3) {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 1px solid; */
+}
+
+/* search bar styles */
+#search {
+  height: 3.34%;
+  width: 66.9%;
+  position: absolute;
+  top: 8.48%;
+  left: 24.63%;
+  border-radius: 10px;
+}
+
+/* search bar styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+
+/* User name displayed on page, positioned with abosulte percentages */
+#hi {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 45px;
+  width: 66.9%;
+  position: absolute;
+  top: 15.51%;
+  left: 24.63%;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* weather componet , positioned with abosulte percentages */
+#weather {
+  display: flex;
+  width: 24.6%;
+  height: 12.38%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 10px;
+  top: 13.16%;
+  left: 65.7%;
+}
+
+/* todo, progress, projects division styles */
+#todo,
+#progress {
+  width: 65.7%;
+  position: absolute;
+}
+
+.proj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#project1 {
+  position: absolute;
+  width: 29.95%;
+  height: 9.5%;
+  top: 29.69%;
+  left: 24.63%;
+}
+#project2 {
+  position: absolute;
+  width: 29.95%;
+  height: 9.5%;
+  top: 29.69%;
+  left: 60.38%;
+}
+#project3 {
+  position: absolute;
+  width: 29.95%;
+  height: 9.5%;
+  top: 40.35%;
+  left: 24.63%;
+}
+#project4 {
+  position: absolute;
+  width: 29.95%;
+  height: 9.5%;
+  top: 40.35%;
+  left: 60.38%;
+}
+
+#todo {
+  height: 14.174%;
+  top: 53.9%;
+  left: 24.63%;
+  /* border: 1px solid; */
+  padding: 10px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#todo::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#todo {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+/* scrollable tasks */
+.task {
+  border-radius: 10px;
+  background: transparent;
+  height: 90%;
+  width: 99%;
+  padding: 10px;
+  margin: 5px;
+  scroll-snap-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 1px solid rgba(99, 94, 94, 0.842);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* progress chart-box styles */
+#progress {
+  height: 16.741%;
+  top: 74.107%;
+  left: 24.63%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* medium devices */
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  * {
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+  }
+
+  #hi {
+    font-size: 30px;
+    line-height: 72px;
+    width: 16.98%;
+    position: absolute;
+    top: 11.45%;
+    left: 28.5%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  nav {
+    height: 94.66%;
+    width: 20.875%;
+    top: 1.53%;
+    left: 1.53%;
+  }
+
+  nav div:nth-child(3) {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #project1 {
+    height: 16.14%;
+    width: 9.125%;
+    top: 34%;
+    left: 28.5%;
+  }
+  #project2 {
+    height: 16.14%;
+    width: 9.125%;
+    top: 34%;
+    left: 40.5%;
+  }
+  #project3 {
+    height: 16.14%;
+    width: 9.125%;
+    top: 51.8%;
+    left: 28.5%;
+  }
+  #project4 {
+    height: 16.14%;
+    width: 9.125%;
+    top: 51.8%;
+    left: 40.5%;
+  }
+
+  #weather {
+    width: 27%;
+    height: 22.135%;
+    top: 4.427%;
+    left: 63.635%;
+  }
+
+  #search {
+    width: 27.125%;
+    height: 3.9%;
+    top: 4.427%;
+    left: 28.5%;
+  }
+
+  #todo {
+    height: 24.174%;
+    width: 34%;
+    top: 34.244%;
+    left: 58.5%;
+  }
+  #progress {
+    height: 29.53%;
+    width: 34%;
+    top: 66.14%;
+    left: 58.5%;
+  }
+
+
+  /* add names of pages in navbar */
+  .fa-heart::after {
+    content: "  Favourites";
+  }
+  .fa-tachometer-alt::after {
+    content: "  Dashboard";
+  }
+  .fa-project-diagram::after {
+    content: "  Projects";
+  }
+  .fa-check-double::after {
+    content: "  To-do";
+  }
+  .fa-calendar::after {
+    content: "  Schedule";
+  }
+  .fa-users::after {
+    content: "  Teams";
+  }
+  .fa-folder::after {
+    content: "  Drives";
+  }
+  .fa-cog::after {
+    content: "  Settings";
+  }
+  .fa-question::after {
+    content: "  Contact ClearGoals";
+  }
+}
+
+
+/* large devices */
+
+@media screen and (min-width: 1100px) {
+  * {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+  }
+  .task span:nth-child(1) {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+  }
+  .task span:nth-child(2) {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  }
+  .task span:nth-child(3) {
+    position: absolute;
+    top: 80%;
+    left: 80%;
+  }
+
+  .task span:nth-child(4) {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+  }
+
+  .task span:nth-child(5) {
+    position: absolute;
+    top: 80%;
+    left: 40%;
+  }
+
+  #hi {
+    font-size: 35px;
+    line-height: 72px;
+    width: 16.98%;
+    position: absolute;
+    top: 4.427%;
+    left: 21.81%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  nav {
+    height: 94.66%;
+    width: 17.78%;
+    top: 1.53%;
+    left: 1.53%;
+  }
+
+  nav div:nth-child(3) {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #project1 {
+    height: 20.31%;
+    width: 8.12%;
+    top: 24.47%;
+    left: 21.88%;
+  }
+  #project2 {
+    height: 20.31%;
+    width: 8.12%;
+    top: 24.47%;
+    left: 32.57%;
+  }
+  #project3 {
+    height: 20.31%;
+    width: 8.12%;
+    top: 24.47%;
+    left: 43.26%;
+  }
+  #project4 {
+    height: 20.31%;
+    width: 8.12%;
+    top: 24.47%;
+    left: 53.95%;
+  }
+
+  #weather {
+    width: 26.13%;
+    height: 40.75%;
+    top: 4.427%;
+    left: 69.47%;
+  }
+
+  #search {
+    width: 23.06%;
+    height: 5.33%;
+    top: 4.427%;
+    left: 42.02%;
+  }
+
+  #todo {
+    height: 36.197%;
+    width: 26.64%;
+    top: 59.5%;
+    left: 21.88%;
+  }
+  #progress {
+    height: 36.197%;
+    width: 43.19%;
+    top: 59.5%;
+    left: 52.41%;
+  }
+
+  /* add names of pages in navbar */
+  .fa-heart::after {
+    content: "  Favourites";
+  }
+  .fa-tachometer-alt::after {
+    content: "  Dashboard";
+  }
+  .fa-project-diagram::after {
+    content: "  Projects";
+  }
+  .fa-check-double::after {
+    content: "  To-do";
+  }
+  .fa-calendar::after {
+    content: "  Schedule";
+  }
+  .fa-users::after {
+    content: "  Teams";
+  }
+  .fa-folder::after {
+    content: "  Drives";
+  }
+  .fa-cog::after {
+    content: "  Settings";
+  }
+  .fa-question::after {
+    content: "  Contact Us";
+  }
+}
+
+
+/* styles for dashboard ends here  */

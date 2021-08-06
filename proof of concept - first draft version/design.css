@@ -1,0 +1,30 @@
+/* universal styles */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24;
+  color: black;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(
+    89.63deg,
+    rgba(51, 204, 255, 0.2),
+    rgba(216, 163, 214, 0.9) 51.19%
+  );
+}
+
+/* universal glassphormism style  */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}

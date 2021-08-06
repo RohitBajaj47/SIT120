@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- title set  -->
+    <title>ClearGoals | Dashboard</title>
+
+    <!-- dashboard style sheet linked -->
+    <link rel="stylesheet" href="dashboard.css" />
+
+    <!-- universal design style sheet linked -->
+    <link rel="stylesheet" href="design.css" />
+
+    <!-- google font : Poopins loaded here  -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+    </style>
+
+    <!-- Font awesome script for icons loaded here  -->
+    <script
+      src="https://kit.fontawesome.com/4a404ff615.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- google charts for developeres script leaded here -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Task", "amount"],
+          ["projects completed", 11],
+          ["pojects left", 2],
+        ]);
+
+        var options = {
+          title: "My Daily Activities",
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("donutchart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+
+
+  </head>
+
+  <body>
+
+    <!-- nav bar -->
+    <nav class="glass">
+      <div>
+        <a href="signout.html"><i class="far fa-user"></i></a>
+      </div>
+      <div>
+        <a href="signout.html"><i class="fa fa-heart"></i></a>
+        <a href="signout.html"><i class="fas fa-tachometer-alt"></i></a>
+        <a href="signout.html"><i class="fas fa-project-diagram"></i></a>
+        <a href="signout.html"><i class="fas fa-check-double"></i></a>
+        <a href="signout.html"><i class="fa fa-calendar"></i></a>
+        <a href="signout.html"><i class="fas fa-users"></i></a>
+        <a href="signout.html"><i class="fas fa-folder"></i></a>
+        <a href="signout.html"><i class="fas fa-cog"></i></a>
+        <a href="signout.html"><i class="fa fa-question"></i></a>
+      </div>
+      <div>
+        <a href="signout.html"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
+    </nav>
+
+    <!-- search bar -->
+    <input type="text" id="search" class="glass" placeholder="search here" />
+    <p id="hi">Hi Rohit :]</p>
+    
+    <!-- weather component division  -->
+    <div id="weather" class="glass">This is the weather section</div>
+
+    <!-- projects division on dashboard-->
+    <div id="project1" class="glass proj">alert 1</div>
+    <div id="project2" class="glass proj">Notification 1</div>
+    <div id="project3" class="glass proj">Notification 2</div>
+    <div id="project4" class="glass proj">Notification 3</div>
+
+    <!-- latest todos on dashboard  -->
+    <div id="todo">
+      <div id="task1" class="task glass">
+        <span><i class="far fa-user"></i></span>
+        <span><i class="far fa-user"></i></span>
+        <span><i class="far fa-user"></i></span>
+        <span><i class="far fa-user"></i></span>
+        <span><i class="far fa-user"></i></span>
+      </div>
+      <div id="task2" class="task glass">
+        <span>icon</span>
+        <span>name</span>
+        <span>done?</span>
+        <span>due in</span>
+        <span>view</span>
+      </div>
+      <div id="task3" class="task glass">
+        <span>icon</span>
+        <span>name</span>
+        <span>done?</span>
+        <span>due in</span>
+        <span>view</span>
+      </div>
+      <div id="task4" class="task glass">
+        <span>icon</span>
+        <span>name</span>
+        <span>done?</span>
+        <span>due in</span>
+        <span>view</span>
+      </div>
+    </div>
+
+    <!-- progress tracker division  -->
+    <div id="progress" class="glass">
+      <div id="donutchart" class="glass" style="width: 90%; height: 90%"></div>
+    </div>
+  </body>
+</html>
