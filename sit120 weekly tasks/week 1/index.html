@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- style sheet linked -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- vue js added to the page -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- page title set -->
+    <title>Web Page | week 1</title>
+
+  </head>
+
+  <!-- internal CSS styles -->
+  <style>
+
+    /* Heading level 2 styles */
+    h2 {
+      font-size: 18px;
+      border-bottom: 2px solid grey;
+      padding: 5px;
+      font-family: monospace;
+      padding: 0px 0px 5px 60px;
+    }
+    span {
+      color: tomato;
+    }
+  </style>
+
+  <!-- body of our page -->
+  <body id="body">
+
+    <!-- H1 with inline styles -->
+    <h1 style="padding: 10px">This is my web page</h1>
+
+    <!-- paragraph with inline styles -->
+    <p style="padding: 10px">
+      Hi, i am <i style="color: red"> Rohit bajaj </i>, a student of information
+      technology !
+    </p>
+
+    <!-- line break -->
+    <br/>
+
+    <p style="padding: 10px; border-bottom: 3px solid grey">
+      I am interested in
+      <b
+        >information systems, cyber security, cloud computing, AI and more...</b
+      >
+    </p>
+
+    <br/>
+
+    <!-- main body area -->
+    <div id="main">
+      <div>
+        <h2>My favourite <span>EDM</span> artists:</h2>
+
+        <!-- ordered list -->
+        <ol>
+          <br />
+          <li style="border: 1px solid grey">
+            Dj Snake <img src="DJ-Snake.jpg" alt="" />
+          </li>
+
+          <li style="border: 1px solid grey">
+            Marshmallow <img src="marshmello.jpg" alt="" />
+          </li>
+
+          <li style="border: 1px solid grey">
+            Maala <img src="Malaa.jpg" alt="" />
+          </li>
+
+          <li style="border: 1px solid grey">
+            Tchami <img src="Tchami.jpg" alt="" />
+          </li>
+        </ol>
+      </div>
+
+
+      <div>
+        <h2>My grades</h2>
+        <br />
+
+        <!-- table -->
+        <table>
+          <tr>
+            <th>Subject Code</th>
+            <th>Marks</th>
+            <th>Grade</th>
+          </tr>
+
+          <tr>
+            <td>SIT182</td>
+            <td>89</td>
+            <td>H D</td>
+          </tr>
+          <tr>
+            <td>SIT102</td>
+            <td>86</td>
+            <td>H D</td>
+          </tr>
+          <tr>
+            <td>SIT112</td>
+            <td>79</td>
+            <td>D</td>
+          </tr>
+          <tr>
+            <td>SIT105</td>
+            <td>75</td>
+            <td>D</td>
+          </tr>
+        </table>
+
+       <!-- some Js -->
+        <div style="margin-top: 20px; list-style: none" id="app">
+          <div
+            id="view"
+            style="
+              border: 1px solid grey;
+              background-color: #86e13a;
+              width: 150px;
+              height: 50px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            {{rnd}}
+          </div>
+
+          <!-- some Js -->
+          <button style="margin-top: 20px" onclick="changeBack()">
+            Random color generator
+          </button>
+          <br />
+          <br />
+
+           <!-- Vue To-do Component -->
+          <p>This is a to-do component <br>(made with Vue2)</p>
+          <todo-item></todo-item>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

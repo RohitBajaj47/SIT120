@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- style sheet added -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- vue added -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Web Page | week 4</title>
+
+    <!-- internal styles -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h2 {
+        font-size: 18px;
+        /* border-bottom: 2px solid grey; */
+        text-align: center;
+        font-family: monospace;
+        /* padding: 0px 0px 5px 10px; */
+      }
+      span {
+        color: tomato;
+      }
+      #leftnav,
+      #center,
+      #right {
+        /* border: 1px solid; */
+        height: max-content;
+      }
+
+      #centernav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: lavender;
+      }
+
+      #w4 {
+        padding: 0px 200px;
+      }
+    </style>
+  </head>
+
+  <!-- main body area -->
+  <body id="body">
+    <!-- header section -->
+    <header style="background-color: rgb(233, 233, 233); text-align: center">
+      <h1 style="padding: 10px">This is my web page</h1>
+      <p style="padding: 10px">
+        Hi, i am <i style="color: red"> Rohit bajaj </i>, a student of
+        information technology !
+      </p>
+      <br />
+      <p style="padding: 10px; border-bottom: 1px solid grey">
+        I am interested in
+        <b
+          >information systems, cyber security, cloud computing, AI and
+          more...</b
+        >
+      </p>
+    </header>
+
+    <!-- navigation bar -->
+    <nav>
+      <button style="display: none">menu</button>
+      <a href="index.html">Home</a>
+      <a href="">About Me</a>
+      <a href="vue.html">week4-7 Vue tasks</a>
+    </nav>
+
+    <!-- center grid -->
+    <div id="center">
+      <br />
+
+      <!-- vue app -->
+      <div id="app1">
+        <div id="centernav">
+          <button v-on:click="toogle4">Week4</button>
+          <button v-on:click="toogle5">Week5</button>
+          <button v-on:click="toogle6">Week6</button>
+          <button v-on:click="toogle7">Week7</button>
+        </div>
+        <!-- week4  -->
+        <div id="w4" v-if="show4" style="display: flex; flex-direction: column; align-items: center; background-color: cornsilk;">
+          <br>
+          <h2>week 4 tasks (use Dev Tools for testing)</h2>
+          <br />
+          <div>
+            <h3 style="color: lightcoral">declarative rendering</h3>
+            <br />
+            <p>hello {{name}}</p>
+            <p v-bind:title="title">hover me</p>
+            <br />
+            <h3 style="color: lightcoral">Conditions and loops</h3>
+            <br />
+            <h4>v-if , v-else</h4>
+            <br />
+            <p v-if="show">
+              Hello there ! <br />
+              i am conditionly rendered
+            </p>
+            <p v-else>Hi! i am else</p>
+          </div>
+          <div>
+            <ol>
+              <br />
+              <h4>v-for loop</h4>
+              <li v-for="item in items">{{item.name}} - {{item.quantity}}</li>
+            </ol>
+          </div>
+        </div>
+        <!-- week 5 -->
+        <div id="week5" v-if="show5">
+          <h1>week 5 tasks (use Dev Tools for testing)</h1>
+          <br />
+
+          hi
+        </div>
+        <!-- week 6 -->
+        <div id="week6" v-if="show6">
+          hi6
+        </div>
+        <!-- week 7 -->
+        <div id="week7" v-if="show7">
+          hihi7
+        </div>
+      </div>
+    </div>
+    <script>
+      // vue app
+      var app = new Vue({
+        el: "#app1",
+        data: {
+          name: "rohit",
+          title: "i am declaratively rendered",
+          show: true,
+          items: [
+            { quantity: 1, name: "donuts" },
+            { quantity: 3, name: "shakes" },
+          ],
+          show4: true,
+          show5: false,
+          show6: false,
+          show7: false,
+        },
+        methods: {
+          toogle4: function () {
+            this.show4 = true;
+            this.show5 = false;
+            this.show6 = false;
+            this.show7 = false;
+          },
+          toogle5: function () {
+            this.show4 = false;
+            this.show5 = true;
+            this.show6 = false;
+            this.show7 = false;
+          },
+          toogle6: function () {
+            this.show4 = false;
+            this.show5 = false;
+            this.show6 = true;
+            this.show7 = false;
+          },
+          toogle7: function () {
+            this.show4 = false;
+            this.show5 = false;
+            this.show6 = false;
+            this.show7 = true;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

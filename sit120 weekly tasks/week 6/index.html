@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- style sheet added -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- vue added -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Web Page | week 6</title>
+
+    <!-- internal styles -->
+    <style>
+      h2 {
+        font-size: 18px;
+        /* border-bottom: 2px solid grey; */
+        text-align: center;
+        font-family: monospace;
+        /* padding: 0px 0px 5px 10px; */
+      }
+      span {
+        color: tomato;
+      }
+    </style>
+  </head>
+
+  <!-- main body area -->
+  <body id="body">
+
+    <!-- header section -->
+    <header style="background-color: rgb(233, 233, 233); text-align: center">
+      <h1 style="padding: 10px">This is my web page</h1>
+      <p style="padding: 10px">
+        Hi, i am <i style="color: red"> Rohit bajaj </i>, a student of
+        information technology !
+      </p>
+      <br />
+      <p style="padding: 10px; border-bottom: 1px solid grey">
+        I am interested in
+        <b
+          >information systems, cyber security, cloud computing, AI and
+          more...</b
+        >
+      </p>
+    </header>
+
+    <!-- navigation bar -->
+    <nav>
+      <a href="">Home</a>
+      <a href="">About Me</a>
+      <a href="vue.html">week4-7 Vue tasks</a>
+    </nav>
+
+    <!-- main content area (grids and flex) -->
+    <div id="main" style="background-color: rgb(231, 253, 255)">
+
+      <!-- grid item 1 -->
+      <div id="grid1">
+        <h2>My favourite <span>EDM</span> artists:</h2>
+        <br />
+        <ol
+          style="
+            display: flex;
+            margin: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+          "
+        >
+          <br />
+          <br />
+          <li>Dj Snake <img src="DJ-Snake.jpg" alt="" /></li>
+
+          <li>Marshmallow <img src="marshmello.jpg" alt="" /></li>
+
+          <li>Maala <img src="Malaa.jpg" alt="" /></li>
+
+          <li>Tchami <img src="Tchami.jpg" alt="" /></li>
+        </ol>
+      </div>
+
+      <!-- grid item 2 -->
+      <div id="grid2">
+        <br />
+
+        <div
+          style="
+            margin-top: 20px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+          "
+          id="app"
+        >
+          <table>
+            <h2>My grades</h2>
+            <br />
+            <tr>
+              <th>Subject Code</th>
+              <th>Marks</th>
+              <th>Grade</th>
+            </tr>
+
+            <tr>
+              <td>SIT182</td>
+              <td>89</td>
+              <td>H D</td>
+            </tr>
+            <tr>
+              <td>SIT102</td>
+              <td>86</td>
+              <td>H D</td>
+            </tr>
+            <tr>
+              <td>SIT112</td>
+              <td>79</td>
+              <td>D</td>
+            </tr>
+            <tr>
+              <td>SIT105</td>
+              <td>75</td>
+              <td>D</td>
+            </tr>
+          </table>
+          <br />
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <div
+              id="view"
+              style="
+                border: 1px solid grey;
+                background-color: #86e13a;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              {{rnd}}
+            </div>
+            <button style="margin-top: 20px" onclick="changeBack()">
+              Random color generator
+            </button>
+          </div>
+          <br />
+          <br />
+          <div style="border: 1px solid grey; padding: 20px">
+            <p>This is a to-do component <br />(made with Vue2)</p>
+            <todo-item></todo-item>
+          </div>
+        </div>
+      </div>
+      <!-- grid item 3 -->
+      <div
+        id="grid3"
+        style="
+          text-align: center;
+          flex-direction: column;
+          justify-content: space-evenly;
+        "
+      >
+        <!-- get / set methods  -->
+        <form action="#">
+          <h2>get/set methods</h2>
+          <p
+            style="border: 1px solid; padding: 10px; text-align: center"
+            id="output_g"
+          >
+            output here
+          </p>
+          <p id="output_gh"></p>
+          <br />
+          <br />
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              justify-content: space-evenly;
+            "
+          >
+            <button id="length" onclick="setfu()">setFullYear()</button>
+            <button id="upper" onclick="setmo()">setMinutes()</button>
+            <button id="lower" onclick="getda()">getDate()</button>
+            <button id="lower" onclick="getmo()">getMonth()</button>
+          </div>
+        </form>
+        <br /><br />
+
+        <!-- google maps api -->
+        <iframe
+          width="300"
+          height="300"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+          style="border: 1px solid grey; display: flex"
+          src="https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=deakin%20university%20+(My%20app)&amp;t=&amp;z=1&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>
+        <p>Deakin locations : worldwide</p>
+      </div>
+
+      <!-- grid item 4 -->
+      <div id="grid4">
+        <br />
+        <br />
+
+
+        <!-- string methods -->
+        <form action="#">
+          <h2>String methods</h2>
+          <p
+            style="border: 1px solid; padding: 10px; text-align: center"
+            id="output"
+          >
+            output here
+          </p>
+          <br />
+          <input type="text" name="" id="input" placeholder="strings here" />
+          <br />
+          <br />
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              justify-content: space-evenly;
+            "
+          >
+            <button id="length" onclick="len()">length</button>
+            <button id="upper" onclick="upperk()">Uppercase</button>
+            <button id="lower" onclick="lowerk()">Lowercase</button>
+            <button id="replace" onclick="rep()">replace</button>
+            <button id="slice" onclick="sli()">slice</button>
+            <button id="charat" onclick="charati()">charAt</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- grid item 5 -->
+      <div id="grid5">
+
+        <!-- array methods -->
+        <form action="#">
+          <h2>Number methods</h2>
+          <p
+            style="border: 1px solid; padding: 10px; text-align: center"
+            id="output_n"
+          >
+            output here
+          </p>
+          <br />
+          <input type="text" name="" id="input_n" placeholder="numbers here" />
+          <br />
+          <br />
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              justify-content: space-evenly;
+            "
+          >
+            <button id="length" onclick="expo()">toExponential(2)</button>
+            <button id="upper" onclick="fix()">toFixed(3)</button>
+            <button id="lower" onclick="prec()">toPrecision(3)</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- grid item 6 -->
+      <div id="grid6">
+        <form action="#">
+          <h2>Array methods</h2>
+          <p
+            style="border: 1px solid; padding: 10px; text-align: center"
+            id="output_a"
+          >
+            output here
+          </p>
+          <br />
+          <p>["apple","banana","mango"]</p>
+          <br />
+          <br />
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              justify-content: space-evenly;
+            "
+          >
+            <button id="length" onclick="tostr()">toString()</button>
+            <button id="upper" onclick="jo()">join(" * ")</button>
+            <button id="lower" onclick="arrlen()">length</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer added -->
+    <footer>this is my footer area</footer>
+
+    <!-- script added -->
+    <script src="index.js"></script>
+  </body>
+</html>

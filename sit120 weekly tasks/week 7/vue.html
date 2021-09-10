@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- style sheet added -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- vue added -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Web Page | week 7</title>
+
+    <!-- internal styles -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h2 {
+        font-size: 18px;
+        /* border-bottom: 2px solid grey; */
+        text-align: center;
+        font-family: monospace;
+        /* padding: 0px 0px 5px 10px; */
+      }
+      span {
+        color: tomato;
+      }
+      #leftnav,
+      #center,
+      #right {
+        /* border: 1px solid; */
+        height: max-content;
+      }
+
+      #centernav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: lavender;
+      }
+
+      #w4 {
+        padding: 0px 200px;
+      }
+    </style>
+  </head>
+
+  <!-- main body area -->
+  <body id="body">
+    <!-- header section -->
+    <header style="background-color: rgb(233, 233, 233); text-align: center">
+      <h1 style="padding: 10px">This is my web page</h1>
+      <p style="padding: 10px">
+        Hi, i am <i style="color: red"> Rohit bajaj </i>, a student of
+        information technology !
+      </p>
+      <br />
+      <p style="padding: 10px; border-bottom: 1px solid grey">
+        I am interested in
+        <b
+          >information systems, cyber security, cloud computing, AI and
+          more...</b
+        >
+      </p>
+    </header>
+
+    <!-- navigation bar -->
+    <nav>
+      <button style="display: none">menu</button>
+      <a href="index.html">Home</a>
+      <a href="">About Me</a>
+      <a href="vue.html">week4-7 Vue tasks</a>
+    </nav>
+
+    <!-- center grid -->
+    <div id="center">
+      <br />
+
+      <!-- vue app -->
+      <div id="app">
+        <!-- app navigation -->
+        <div id="centernav">
+          <button v-on:click="toogle4">Week4</button>
+          <button v-on:click="toogle5">Week5</button>
+          <button v-on:click="toogle6">Week6</button>
+          <button v-on:click="toogle7">Week7</button>
+        </div>
+        <!-- week4  -->
+        <div
+          id="w4"
+          v-if="show4"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: cornsilk;
+          "
+        >
+          <br />
+          <h2>week 4 tasks (use Dev Tools for testing)</h2>
+          <br />
+
+          <!-- week 4 tasks -->
+          <div>
+            <h3 style="color: lightcoral">declarative rendering</h3>
+            <br />
+            <p>hello {{name}}</p>
+            <p v-bind:title="title">hover me</p>
+            <br />
+            <h3 style="color: lightcoral">Conditions and loops</h3>
+            <br />
+            <h4>v-if , v-else</h4>
+            <br />
+            <p v-if="show">
+              Hello there ! <br />
+              i am conditionly rendered
+            </p>
+            <p v-else>Hi! i am else</p>
+          </div>
+          <div>
+            <ol>
+              <br />
+              <h4>v-for loop</h4>
+              <li v-for="item in items">{{item.name}} - {{item.quantity}}</li>
+            </ol>
+          </div>
+        </div>
+        <!-- week 5 -->
+        <div
+          id="week5"
+          v-if="show5"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: cornsilk;
+          "
+        >
+          <br />
+
+          <h2>week 5 tasks (use Dev Tools for testing)</h2>
+          <br />
+          <!-- week 5 tasks -->
+          <label for="HuI"
+            >V-model <span> -- </span>
+            <input
+              type="text"
+              v-for="item in items"
+              v-model="item.name"
+              id="HuI"
+          /></label>
+          <br />
+          <h3 style="color: lightcoral">This is a component</h3>
+          <br />
+          <!-- vue component -->
+          <list-item v-for="item in items" v-bind:name="item.name"></list-item>
+          <br />
+        </div>
+        <!-- week 6 -->
+        <div
+          id="week6"
+          v-if="show6"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: cornsilk;
+          "
+        >
+          <br />
+          <h2>week 6 tasks (use Dev Tools for testing)</h2>
+          <br />
+          <br />
+          <!-- week 6 tasks -->
+          <label for="i1"
+            >Name (.lazy):
+            <input type="text" id="i1" v-model.lazy="message.name" />
+            <span>output - {{message.name}}</span></label
+          >
+          <label for="i2"
+            >password (.trim):
+            <input type="password" id="i2" v-model.trim="message.pass" />
+            <span>output - {{message.pass}}</span></label
+          >
+          <label for="i3"
+            >email address:
+            <input type="email" id="i3" v-model="message.email" />
+            <span>output - {{message.email}}</span></label
+          >
+          <br />
+          <label for="checkbox">
+            <input type="checkbox" id="checkbox" v-model="checked" />
+            {{ checked }}</label
+          >
+          <br />
+          <div>
+            <input
+              type="checkbox"
+              id="option1"
+              value="option1"
+              v-model="checkedOpts"
+            />
+            <label for="option1">option1</label>
+            <input
+              type="checkbox"
+              id="option2"
+              value="option2"
+              v-model="checkedOpts"
+            />
+            <label for="option2">option2</label>
+            <input
+              type="checkbox"
+              id="option3"
+              value="option3"
+              v-model="checkedOpts"
+            />
+            <label for="option2"
+              >option3 <span>Checked options: {{ checkedOpts }}</span></label
+            >
+          </div>
+          <br />
+          <span>
+            <select v-model="selected">
+              <option v-for="option in options" v-bind:value="option.text">
+                {{ option.text }}
+              </option>
+            </select>
+            <span>Selected option: {{ selected }}</span></span
+          >
+          <br />
+        </div>
+        <!-- week 7 -->
+        <div
+          id="week7"
+          v-if="show7"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: cornsilk;
+          "
+        >
+        <br>
+          <h2>week 7 tasks (use Dev Tools for testing)</h2>
+          <br />
+          <h3>This component is globally registered</h3>
+
+          <!-- globally registered component -->
+          <list-item name="global" id="1"></list-item>
+          <br />
+
+          <!-- locally registered component -->
+          <button-component></button-component>
+
+          <br />
+          <h3>props</h3>
+          <!-- props -->
+          <div style="display: flex; ">
+          <input type="text" v-model="name" style="width: 100px;">
+          <input type="text" v-model="num" style="width: 60px;">
+          </div>
+          <br>
+          <list-item :name="name" :id="num"></list-item>
+          <br />
+          <h3>custom event + slots (use dev tools to see events)</h3>
+          <br>
+
+          <!-- v-model is now customised to trigger a custom event , slots is being used here to give a custom lable -->
+          <custom-checkbox v-model="custom" title="you can also type in your name here from editor, or just remove [hover here] to see the default label">[hover here]</custome-checkbox>
+        </div>
+      </div>
+        <!-- this app is for testing local registration of components -->
+        <div
+          id="app1"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(242, 231, 187);
+          "
+        >
+          <br />
+          <h3>This component is globally registered</h3>
+          <list-item name="global" id="3"></list-item>
+          <br />
+          <h3>
+            This component is locally registed (in app1)and is not accesible to
+            root
+          </h3>
+          <button-component></button-component>
+        </div>
+     
+    </div>
+
+    <script>
+      // list component (global)
+      Vue.component("list-item", {
+        props: ["name", "id"],
+        template: `
+                  <div
+            style="
+              width: 500px;
+              height: 70px;
+              background-color: white;
+              border: 1px solid grey;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px;
+            "
+          >
+            <section>
+              <img src="icons.png" alt="" style="width: 50px; height: 50px;"/>
+            </section>
+            <section>
+              <span>{{name}} (has</span>
+              <span>id: {{id}} )</span>              
+            </section>
+            <section>
+              <input type="checkbox"/>
+            </section>
+            <section><a href="">view ></a> </section>
+          </div>`,
+      });
+
+      //custom checkbox (global component)
+      Vue.component("custom-checkbox", {
+        model: {
+          prop: "checked",
+          event: "change",
+        },
+        props: {
+          checked: Boolean,
+        },
+
+        template: `
+        <div>
+    <input
+      type="checkbox"
+      v-bind:checked="checked"
+      v-on:change="$emit('change', $event.target.checked)"
+    >
+    <span>custom check by <slot>Rohit</slot></span> : {{checked}} <br><br></div>
+  `,
+      });
+
+      //this component is registered for "#app1"
+      var MyComponent = {
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        template:
+          '<button v-on:click="count++">You clicked me {{ count }} times.</button>',
+      };
+
+      // vue app
+      var app = new Vue({
+        el: "#app",
+        data: {
+          name: "edit me",
+          num: "2",
+          title: "i am declaratively rendered",
+          show: true,
+          custom: true,
+          items: [
+            { quantity: 1, name: "donuts" },
+            { quantity: 3, name: "shakes" },
+          ],
+          show4: false,
+          show5: false,
+          show6: false,
+          show7: true,
+          message: { name: "rohit", pass: "password", email: "email" },
+          checked: true,
+          selected: "fries",
+          options: [{ text: "Fruits" }, { text: "vegies" }, { text: "fries" }],
+          checkedOpts: [],
+        },
+
+        // app methods
+        methods: {
+          // week 4 toogle
+          toogle4: function () {
+            this.show4 = true;
+            this.show5 = false;
+            this.show6 = false;
+            this.show7 = false;
+          },
+
+          // week 5 toogle
+          toogle5: function () {
+            this.show4 = false;
+            this.show5 = true;
+            this.show6 = false;
+            this.show7 = false;
+          },
+
+          // week 6 toogle
+          toogle6: function () {
+            this.show4 = false;
+            this.show5 = false;
+            this.show6 = true;
+            this.show7 = false;
+          },
+
+          // week 7 toogle
+          toogle7: function () {
+            this.show4 = false;
+            this.show5 = false;
+            this.show6 = false;
+            this.show7 = true;
+          },
+        },
+      });
+
+      //vue app1
+      var app1 = new Vue({
+        el: "#app1",
+        components: {
+          "button-component": MyComponent,
+        },
+      });
+    </script>
+  </body>
+</html>
