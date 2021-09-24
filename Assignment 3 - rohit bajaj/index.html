@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- title of the app -->
+    <title>ClearGoals | Be Productive</title>
+
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- vue installed -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- menu icon -->
+      <div id="menu-icon" @click="showmenu = !showmenu">
+        <img src="icons/keypad-outline.svg" alt="" />
+      </div>
+
+      <!-- menu container -->
+      <div id="menu-itself" class="flex-col" v-if="showmenu">
+        <div
+          style="position: absolute; top: 20px; right: 10px"
+          @click="showmenu = !showmenu"
+        >
+          <img src="icons/close-outline.svg" alt="" class="icon" />
+        </div>
+        <br />
+        <br />
+        <div class="flex-row" style="justify-content: space-evenly">
+          <img src="icons/github-outline.svg" class="icon" />
+          <h3>Github</h3>
+          <img src="icons/settings-2-outline.svg" class="icon" />
+          <h3>Settings</h3>
+        </div>
+        <br />
+        <br />
+
+        <!-- sub menu in the main menu-->
+        <section id="the-menu">
+          <div>
+            <div class="flex-row" @click="showtasks=!showtasks">
+              <img src="icons/checkmark-circle-outline.svg" class="icon" />
+              <span></span>
+              <h2>Tasks</h2>
+              <span></span>
+              <img src="icons/chevron-down-outline.svg" alt="" class="icon" />
+            </div>
+            <transition name="fade">
+              <ul class="sublist" v-if="showtasks">
+                <li
+                  class="flex-row"
+                  @click="currenttab = 'All Tasks', showmenu = false"
+                >
+                  <img src="icons/layers-outline.svg" alt="" class="icon" />
+                  <span></span> All Tasks
+                </li>
+                <li
+                  class="flex-row"
+                  @click="currenttab = 'Today', showmenu = false"
+                >
+                  <img src="icons/cube-outline.svg" alt="" class="icon" /><span></span
+                  >For Today
+                </li>
+                <li
+                  class="flex-row"
+                  @click="currenttab = 'Tomorrow',showmenu = false"
+                >
+                  <img src="icons/copy-outline.svg" alt="" class="icon" /><span></span
+                  >For Tomorrow
+                </li>
+                <li
+                  class="flex-row"
+                  @click="currenttab = 'Completed', showmenu = false"
+                >
+                  <img
+                    src="icons/checkmark-circle-2-outline.svg"
+                    alt=""
+                    class="icon"
+                  /><span></span>Completed
+                </li>
+              </ul>
+            </transition>
+          </div>
+        </section>
+        <br />
+      </div>
+
+      <!-- the area where the tasks will be shown the app -->
+      <section id="preview-area">
+        <!-- preview head is the title of the page -->
+        <div
+          id="preview-head"
+          class="flex-row"
+          style="justify-content: space-between"
+        >
+          <h1>{{currenttab}}</h1>
+          <img src="icons/search-outline.svg" class="icon" alt="" />
+        </div>
+        <!-- preview-body is the body were diffrent tasks can be seen on the page -->
+        <div
+          id="preview-body"
+          v-for="j in tasks"
+          v-if="currenttab == 'All Tasks'"
+        >
+          <!-- display all the tasks  -->
+          <task
+            :t="j"
+            @view="viewtask"
+            @done="donetask"
+            v-if="j.done == false"
+          ></task>
+        </div>
+
+        <!-- display today's tasks that are not yet completed -->
+        <div id="preview-body" v-for="j in tasks" v-if="currenttab == 'Today'">
+          <task
+            :t="j"
+            @view="viewtask"
+            @done="donetask"
+            v-if="j.date.slice(8,10) == new Date().getDate() && j.done == false"
+          ></task>
+        </div>
+
+        <!-- display tomorrow's tasks that are not yet completed -->
+        <div
+          id="preview-body"
+          v-for="j in tasks"
+          v-if="currenttab == 'Tomorrow'"
+        >
+          <task
+            :t="j"
+            @view="viewtask"
+            @done="donetask"
+            v-if="j.date.slice(8,10) == new Date().getDate() + 1 && j.done == false "
+          ></task>
+        </div>
+
+        <!-- display all the completed tasks -->
+        <div
+          id="preview-body"
+          v-for="j in tasks"
+          v-if="currenttab == 'Completed'"
+        >
+          <task
+            :t="j"
+            @view="viewtask"
+            @done="donetask"
+            v-if="j.done == true"
+          ></task>
+        </div>
+      </section>
+
+      <!-- top right icon to add the tasks in the app -->
+      <div id="add-icon" @click="newtask = !newtask">
+        <img src="icons/plus-outline.svg" alt="" />
+        <h2
+          style="position: absolute; top: 10px; right: 80px; width: max-content"
+        >
+          Add Task >>
+        </h2>
+      </div>
+
+      <!-- component transition -->
+      <transition name="fade">
+        <add-new
+          @add="addtask"
+          @close="close"
+          :unique="id"
+          v-if="newtask"
+        ></add-new>
+      </transition>
+
+      <!-- this component is used to display the details of the selected task -->
+      <transition name="fade">
+        <taskview
+          v-for="task in tasks"
+          v-if="task.id == currentview"
+          :t="task"
+        ></taskview>
+      </transition>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

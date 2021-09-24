@@ -1,0 +1,295 @@
+@font-face {
+  font-family: myFont;
+  src: url(fonts/Quicksand-VariableFont_wght.ttf);
+}
+
+/* universal stykes */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: myFont;
+  list-style: none;
+  font-size: 14px;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #b5b0b0 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b5b0b0;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+/* H1 styles */
+h1 {
+  font-size: 20px;
+}
+
+/* styles for body */
+body {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 20px;
+  position: relative;
+  background-color: rgba(211, 211, 109, 0.529);
+}
+
+/* styles for the menu icon */
+#menu-icon {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.193);
+  border-radius: 50px;
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -moz-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+}
+
+/* styles for the menu */
+#menu-itself {
+  position: fixed;
+  top: 90px;
+  left: 50px;
+  width: 280px;
+  height: 500px;
+  overflow-y: scroll;
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.597);
+  box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -moz-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  padding: 20px;
+  justify-content: start;
+  z-index: 20;
+  opacity: 1;
+  background-color: white;
+}
+
+#menu-itself div:nth-child(1) {
+  height: 10%;
+}
+
+/* flex column class */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* flex-row class */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+/* list styles */
+.sublist {
+  margin: 30px 0px 0px 40px;
+  height: max-content;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+span {
+  padding-right: 10px;
+}
+
+/* icon class */
+.icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+li {
+  cursor: pointer;
+  margin: 5px 0px;
+}
+
+/* the preview section */
+#preview-area {
+  /* width: 90%; */
+  padding: 100px;
+  /* border: 1px solid; */
+  margin-top: 50px;
+  z-index: -20;
+}
+
+/* styles of the task area */
+#preview-body {
+  /* border: 1px solid; */
+  margin-top: 30px;
+  height: max-content;
+  padding: 10px;
+  display: flex;
+}
+
+/* styles for add new component */
+#addnew {
+  background-color: rgb(230, 242, 222);
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px 0px rgba(177, 255, 151, 0.248);
+  height: max-content;
+  position: absolute;
+  padding: 20px 30px;
+  width: 300px;
+  top: 100px;
+}
+
+/* buttons in the form*/
+button {
+  padding: 10px;
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.672);
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* inputs */
+input {
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 0px 10px;
+  height: 30px;
+}
+
+select {
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 10px 10px;
+  background-color: rgba(95, 82, 82, 0.672);
+  color: white;
+  cursor: pointer;
+}
+
+#dateinput {
+  width: max-content;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+/* style of add task icon */
+#add-icon {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.193);
+  border-radius: 50px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -moz-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+}
+
+/* styles for task component */
+#displaytask {
+  background-color: white;
+  box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -moz-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  padding: 10px 20px;
+  border: 1px solid rgba(128, 128, 128, 0.09);
+  border-radius: 10px;
+  justify-content: space-evenly;
+  width: max-content;
+  max-width: 400px;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* styles for view task component */
+#view {
+  height: max-content;
+  width: max-content;
+  background-color: white;
+  box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  -moz-box-shadow: 0px 4px 8px 0px rgba(171, 151, 151, 0.391);
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+  /* margin: 20% 30%; */
+  /* border: 1px solid grey; */
+  top: 600px;
+  left: 20%;
+}
+
+/* vue transitons */
+/* transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+/* medium screen styles */
+@media screen and (min-width: 780px) and (max-width: 1100px) {
+  body {
+    padding: 0px 100px;
+  }
+
+  #addnew {
+    left: 25%;
+  }
+
+  #preview-area {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #view {
+    left: 500px;
+    top: 40%;
+  }
+}
+
+/* large screen styles */
+@media screen and (min-width: 1100px) {
+  body {
+    padding: 0px 200px;
+  }
+
+  #addnew {
+    left: 40%;
+  }
+  #preview-area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #view {
+    top: 200px;
+    left: 700px;
+    /* width: 400px; */
+  }
+}
